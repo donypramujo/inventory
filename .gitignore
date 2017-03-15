@@ -1,0 +1,13 @@
+.DS_Store
+*.log
+/bootstrap/
+/config/
+/install_files/
+/modules/
+/storage/
+/vendor/
+/.htaccess
+/artisan
+/index.php
+/install.php
+/README.md
