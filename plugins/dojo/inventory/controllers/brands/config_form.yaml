@@ -1,0 +1,10 @@
+name: Brands
+form: $/dojo/inventory/models/brand/fields.yaml
+modelClass: Dojo\Inventory\Models\Brand
+defaultRedirect: dojo/inventory/brands
+create:
+    redirect: 'dojo/inventory/brands/update/:id'
+    redirectClose: dojo/inventory/brands
+update:
+    redirect: dojo/inventory/brands
+    redirectClose: dojo/inventory/brands

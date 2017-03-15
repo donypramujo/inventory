@@ -1,0 +1,15 @@
+plugin:
+    name: 'dojo.inventory::lang.plugin.name'
+    description: 'dojo.inventory::lang.plugin.description'
+    author: 'Dony Pramujo'
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'Menu Item'
+        url: dojo/inventory/brands
+        icon: icon-barcode
+permissions:
+    dojo.inventory.access_brands:
+        tab: 'dojo.inventory::lang.inventory.access_brands'
+        label: 'dojo.inventory::lang.inventory.access_brands'

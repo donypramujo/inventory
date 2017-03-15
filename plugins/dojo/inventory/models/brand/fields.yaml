@@ -1,0 +1,7 @@
+fields:
+    name:
+        label: 'dojo.inventory::lang.brand.name'
+        span: auto
+        placeholder: 'dojo.inventory::lang.brand.name'
+        required: 1
+        type: text

@@ -1,0 +1,11 @@
+title: Brands
+modelClass: Dojo\Inventory\Models\Brand
+list: $/dojo/inventory/models/brand/columns.yaml
+recordUrl: 'dojo/inventory/brands/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
