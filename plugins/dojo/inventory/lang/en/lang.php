@@ -3,11 +3,21 @@
         'name' => 'Inventory',
         'description' => '',
     ],
-    'inventory' => [
-        'access_brands' => 'Manage the brands',
-    ],
     'brand' => [
         'id' => 'ID',
-        'name' => 'Name',
+        'name' => 'Brand Name',
+        'brand' => 'Brand',
+    ],
+    'menuitem' => [
+        'master_data' => 'Master Data',
+    ],
+    'permission' => [
+        'master_data' => 'Master Data',
+        'manage_brands' => 'Manage brands',
+        'manage_categories' => 'Manage categories',
+    ],
+    'category' => [
+        'category' => 'Category',
+    	'name' => 'Category Name',
     ],
 ];

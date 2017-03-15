@@ -1,10 +1,14 @@
 columns:
     id:
-        label: id
+        label: 'dojo.inventory::lang.brand.id'
         type: number
+        searchable: true
+        sortable: true
     name:
-        label: name
+        label: 'dojo.inventory::lang.brand.name'
         type: text
+        searchable: true
+        sortable: true
     created_at:
         label: created_at
         type: datetime

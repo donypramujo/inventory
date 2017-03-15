@@ -5,11 +5,23 @@ plugin:
     icon: oc-icon-adjust
     homepage: ''
 navigation:
-    main-menu-item:
-        label: 'Menu Item'
+    master-data:
+        label: 'dojo.inventory::lang.menuitem.master_data'
         url: dojo/inventory/brands
-        icon: icon-barcode
+        icon: icon-home
+        sideMenu:
+            brand:
+                label: 'dojo.inventory::lang.brand.brand'
+                url: dojo/inventory/brands
+                icon: icon-archive
+            category:
+                label: 'dojo.inventory::lang.category.category'
+                url: dojo/inventory/categories
+                icon: icon-navicon
 permissions:
     dojo.inventory.access_brands:
-        tab: 'dojo.inventory::lang.inventory.access_brands'
-        label: 'dojo.inventory::lang.inventory.access_brands'
+        tab: 'dojo.inventory::lang.permission.master_data'
+        label: 'dojo.inventory::lang.permission.manage_brands'
+    dojo.inventory.access_categories:
+        tab: 'dojo.inventory::lang.permission.master_data'
+        label: 'dojo.inventory::lang.permission.manage_categories'

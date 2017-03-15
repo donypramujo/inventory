@@ -1,0 +1,10 @@
+name: Categories
+form: $/dojo/inventory/models/category/fields.yaml
+modelClass: Dojo\Inventory\Models\Category
+defaultRedirect: dojo/inventory/categories
+create:
+    redirect: 'dojo/inventory/categories/update/:id'
+    redirectClose: dojo/inventory/categories
+update:
+    redirect: dojo/inventory/categories
+    redirectClose: dojo/inventory/categories
