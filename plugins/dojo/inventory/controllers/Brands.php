@@ -4,7 +4,7 @@ use Backend\Classes\Controller;
 use BackendMenu;
 
 class Brands extends Controller
-{
+{ 
     public $implement = ['Backend\Behaviors\ListController','Backend\Behaviors\FormController'];
     
     public $listConfig = 'config_list.yaml';
