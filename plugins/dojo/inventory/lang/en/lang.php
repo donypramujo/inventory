@@ -12,6 +12,7 @@
         'id' => 'ID',
         'name' => 'Brand Name',
         'brand' => 'Brand',
+        'code' => 'Brand Code',
     ],
     'menuitem' => [
         'master_data' => 'Master Data',
@@ -26,6 +27,7 @@
         'id' => 'ID',
         'category' => 'Category',
         'name' => 'Category Name',
+    	'code' => 'Category Code',
     ],
     'product' => [
         'product' => 'Product',

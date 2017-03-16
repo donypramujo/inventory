@@ -27,6 +27,9 @@ class Product extends Model
     public $belongsTo = [
     		'brand' => [
     				'Dojo\Inventory\Models\Brand'
-    		]
+    		],
+    		'category' => [
+    				'Dojo\Inventory\Models\Category'
+    		],
     ];
 }

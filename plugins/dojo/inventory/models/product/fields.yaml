@@ -5,9 +5,17 @@ fields:
         type: text
     brand:
         label: 'dojo.louhan::lang.label.category'
-        nameFrom: id
+        nameFrom: code
         descriptionFrom: name
         prompt: 'dojo.louhan::lang.label.find_category'
         list: $/dojo/inventory/models/brand/columns.yaml
+        span: left
+        type: recordfinder
+    category: 
+        label: 'dojo.louhan::lang.label.category'
+        nameFrom: name
+        descriptionFrom: name
+        prompt: 'dojo.louhan::lang.label.find_category'
+        list: $/dojo/inventory/models/category/columns.yaml
         span: left
         type: recordfinder

@@ -11,6 +11,7 @@ class BuilderTableCreateDojoInventoryBrands extends Migration
         {
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
+            $table->string('code', 10);
             $table->string('name', 50);
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();

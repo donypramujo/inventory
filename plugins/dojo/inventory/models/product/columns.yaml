@@ -19,6 +19,11 @@ columns:
         type: text
         searchable: true
         sortable: true
+    brand[name]: 
+        label: name
+        type: text
+        searchable: true
+        sortable: true
     created_at:
         label: created_at
         type: datetime

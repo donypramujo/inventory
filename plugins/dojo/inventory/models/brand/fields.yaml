@@ -1,7 +1,13 @@
 fields:
+    code:
+        label: 'dojo.inventory::lang.brand.code'
+        span: left
+        placeholder: 'dojo.inventory::lang.brand.code'
+        required: 1
+        type: text
     name:
         label: 'dojo.inventory::lang.brand.name'
-        span: auto
+        span: left
         placeholder: 'dojo.inventory::lang.brand.name'
         required: 1
         type: text

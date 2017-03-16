@@ -20,6 +20,7 @@ class Category extends Model
      * Validation
      */
     public $rules = [
+    		'code' => 'required|unique:dojo_inventory_categories,code,NULL,id,deleted_at,NULL|max:50',
     		'name' => 'required|unique:dojo_inventory_categories,name,NULL,id,deleted_at,NULL|max:50',
     ];
     public $attributeNames = [ ];
@@ -27,7 +28,7 @@ class Category extends Model
     /**
      * @var array Monitor these attributes for changes.
      */
-    protected $revisionable = ['name','deleted_at'];
+    protected $revisionable = ['code','name','deleted_at'];
     
     /**
      * @var array Relations
@@ -48,6 +49,7 @@ class Category extends Model
     
     public function beforeValidate() {
     	$this->attributeNames = [
+    			'code' => trans ( 'dojo.inventory::lang.category.code' ),
     			'name' => trans ( 'dojo.inventory::lang.category.name' ),
     	];
     }
