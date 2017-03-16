@@ -1,0 +1,10 @@
+name: Locations
+form: $/dojo/inventory/models/location/fields.yaml
+modelClass: Dojo\Inventory\Models\Location
+defaultRedirect: dojo/inventory/locations
+create:
+    redirect: 'dojo/inventory/locations/update/:id'
+    redirectClose: dojo/inventory/locations
+update:
+    redirect: dojo/inventory/locations
+    redirectClose: dojo/inventory/locations

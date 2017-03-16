@@ -4,23 +4,24 @@ columns:
         type: number
         searchable: true
         sortable: true
-    brand_id:
-        label: brand_id
-        type: number
+        invisible: true
+    code: 
+        label: 'dojo.inventory::lang.product.code'
+        type: text
         searchable: true
         sortable: true
-    category_id:
-        label: category_id
-        type: number
-        searchable: true
-        sortable: true
-    name:
-        label: name
+    name: 
+        label: 'dojo.inventory::lang.product.name'
         type: text
         searchable: true
         sortable: true
     brand[name]: 
-        label: name
+        label: 'dojo.inventory::lang.brand.brand'
+        type: text
+        searchable: true
+        sortable: true
+    category[name]: 
+        label: 'dojo.inventory::lang.category.category'
         type: text
         searchable: true
         sortable: true

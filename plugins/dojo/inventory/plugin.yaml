@@ -10,6 +10,10 @@ navigation:
         url: dojo/inventory/brands
         icon: icon-home
         sideMenu:
+            location:
+                label: 'dojo.inventory::lang.location.location'
+                url: dojo/inventory/locations
+                icon: icon-map-marker
             brand:
                 label: 'dojo.inventory::lang.brand.brand'
                 url: dojo/inventory/brands
@@ -32,3 +36,6 @@ permissions:
     dojo.inventory.access_products:
         tab: 'dojo.inventory::lang.permission.master_data'
         label: 'dojo.inventory::lang.permission.manage_products'
+    dojo.inventory.access_locations:
+        tab: 'dojo.inventory::lang.permission.master_data'
+        label: 'dojo.inventory::lang.permission.manage_locations'

@@ -3,7 +3,7 @@
 use Backend\Classes\Controller;
 use BackendMenu;
 
-class Products extends Controller
+class Locations extends Controller
 {
     public $implement = ['Backend\Behaviors\ListController','Backend\Behaviors\FormController'];
     
@@ -11,22 +11,12 @@ class Products extends Controller
     public $formConfig = 'config_form.yaml';
 
     public $requiredPermissions = [
-        'dojo.inventory.access_products' 
+        'dojo.inventory.access_locations' 
     ];
 
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Dojo.Inventory', 'master-data', 'product');
+        BackendMenu::setContext('Dojo.Inventory', 'master-data', 'location');
     }
-    
-    
-//     public function listExtendQuery($query)
-//     {
-//     	$query->with(['brand' => function ($query) {
-//         	$query->withTrashed();
-//     	},'category' => function ($query) {
-//         	$query->withTrashed();
-//     	}]);
-//     }
 }

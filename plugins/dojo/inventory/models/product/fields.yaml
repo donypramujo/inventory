@@ -1,21 +1,30 @@
 fields:
+    code:
+        label: 'dojo.inventory::lang.product.code'
+        span: left
+        placeholder: 'dojo.inventory::lang.product.code'
+        required: 1
+        type: text
     name:
-        label: Text
-        span: auto
+        label: 'dojo.inventory::lang.product.name'
+        span: left
+        placeholder: 'dojo.inventory::lang.product.name'
+        required: 1
         type: text
     brand:
-        label: 'dojo.louhan::lang.label.category'
+        label: 'dojo.inventory::lang.brand.brand'
         nameFrom: code
         descriptionFrom: name
-        prompt: 'dojo.louhan::lang.label.find_category'
+        prompt: 'dojo.inventory::lang.brand.find_brand'
         list: $/dojo/inventory/models/brand/columns.yaml
         span: left
+        required: 1
         type: recordfinder
-    category: 
-        label: 'dojo.louhan::lang.label.category'
+    category:
+        label: 'dojo.inventory::lang.category.category'
         nameFrom: name
         descriptionFrom: name
-        prompt: 'dojo.louhan::lang.label.find_category'
+        prompt: 'dojo.inventory::lang.category.find_category'
         list: $/dojo/inventory/models/category/columns.yaml
         span: left
         type: recordfinder

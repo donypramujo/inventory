@@ -1,0 +1,19 @@
+inventory
+
+id
+serial number
+last_status
+description
+product
+location
+created_by
+updated_by
+
+inventory_history
+id
+inventory_id
+old_status
+new_status
+description
+created_by
+created_at

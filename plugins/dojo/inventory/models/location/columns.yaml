@@ -1,0 +1,32 @@
+columns:
+    id:
+        label: 'dojo.inventory::lang.location.id'
+        type: number
+        invisible: true
+        searchable: true
+        sortable: true
+    code:
+        label: 'dojo.inventory::lang.location.code'
+        type: text
+        searchable: true
+        sortable: true
+    name:
+        label: 'dojo.inventory::lang.location.name'
+        type: text
+        searchable: true
+        sortable: true
+    created_at:
+        label: 'dojo.inventory::lang.model.created_at'
+        type: datetime
+        invisible: true
+        sortable: true
+    updated_at:
+        label: 'dojo.inventory::lang.model.updated_at'
+        type: datetime
+        invisible: true
+        sortable: true
+    deleted_at:
+        label: 'dojo.inventory::lang.model.deleted_at'
+        type: datetime
+        invisible: true
+        sortable: true

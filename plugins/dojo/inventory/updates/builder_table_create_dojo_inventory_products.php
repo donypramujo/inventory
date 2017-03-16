@@ -11,6 +11,7 @@ class BuilderTableCreateDojoInventoryProducts extends Migration
         {
         	$table->engine = 'InnoDB';
         	$table->increments('id')->unsigned();
+        	$table->string('code', 10);
         	$table->string('name', 50);
         	
         	$table->integer('brand_id')->unsigned();

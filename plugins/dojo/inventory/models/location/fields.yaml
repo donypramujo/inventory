@@ -1,0 +1,13 @@
+fields:
+    code: 
+        label: 'dojo.inventory::lang.location.code'
+        span: left
+        placeholder: 'dojo.inventory::lang.location.code'
+        required: 1
+        type: text
+    name:
+        label: 'dojo.inventory::lang.location.name'
+        span: left
+        placeholder: 'dojo.inventory::lang.location.name'
+        required: 1
+        type: text
