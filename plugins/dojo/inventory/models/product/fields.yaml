@@ -1,0 +1,13 @@
+fields:
+    name:
+        label: Text
+        span: auto
+        type: text
+    brand:
+        label: 'dojo.louhan::lang.label.category'
+        nameFrom: id
+        descriptionFrom: name
+        prompt: 'dojo.louhan::lang.label.find_category'
+        list: $/dojo/inventory/models/brand/columns.yaml
+        span: left
+        type: recordfinder

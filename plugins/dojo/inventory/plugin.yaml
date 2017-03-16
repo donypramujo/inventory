@@ -18,6 +18,10 @@ navigation:
                 label: 'dojo.inventory::lang.category.category'
                 url: dojo/inventory/categories
                 icon: icon-navicon
+            product:
+                label: 'dojo.inventory::lang.product.product'
+                url: dojo/inventory/products
+                icon: icon-skyatlas
 permissions:
     dojo.inventory.access_brands:
         tab: 'dojo.inventory::lang.permission.master_data'
@@ -25,3 +29,6 @@ permissions:
     dojo.inventory.access_categories:
         tab: 'dojo.inventory::lang.permission.master_data'
         label: 'dojo.inventory::lang.permission.manage_categories'
+    dojo.inventory.access_products:
+        tab: 'dojo.inventory::lang.permission.master_data'
+        label: 'dojo.inventory::lang.permission.manage_products'

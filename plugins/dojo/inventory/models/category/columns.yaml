@@ -1,16 +1,19 @@
 columns:
     id:
-        label: id
+        label: 'dojo.inventory::lang.category.id'
         type: number
     name:
-        label: name
+        label: 'dojo.inventory::lang.category.name'
         type: text
     created_at:
-        label: created_at
+        label: 'dojo.inventory::lang.model.created_at'
         type: datetime
+        invisible: true
     updated_at:
-        label: updated_at
+        label: 'dojo.inventory::lang.model.updated_at'
         type: datetime
+        invisible: true
     deleted_at:
-        label: deleted_at
+        label: 'dojo.inventory::lang.model.deleted_at'
         type: datetime
+        invisible: true

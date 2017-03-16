@@ -1,6 +1,7 @@
 fields:
     name:
-        label: Text
+        label: 'dojo.inventory::lang.category.name'
         span: auto
+        placeholder: 'dojo.inventory::lang.category.name'
         required: 1
         type: text
