@@ -6,17 +6,42 @@
 <?php Block::endPut() ?>
 
 <?php if (!$this->fatalError): ?>
+	<!-- Primary content -->
+	<?php Block::put('form-contents') ?>
+	    <div class="layout-row min-size">
+            <?= $this->formRender(['section' => 'outside','preview'=>true]) ?>
+        </div>
+        <div class="layout-row">
+            <?= $this->formRender(['section' => 'primary','preview'=>true]) ?>
+        </div>
 
-    <div class="form-preview">
-        <?= $this->formRenderPreview() ?>
-    </div>
+        <div class="form-buttons">
+            <div class="loading-indicator-container">
+			    <a href="<?= Backend::url('dojo/inventory/stocks') ?>" class="btn btn-default oc-icon-chevron-left">
+			        <?= e(trans('backend::lang.form.return_to_list')) ?>
+			    </a>
+            </div>
+        </div>
+	<?php Block::endPut() ?>
+	
+	<!-- Complimentary sidebar -->
+	<?php Block::put('form-sidebar') ?>
+	     <div class="hide-tabs"><?= $this->formRender(['section' => 'secondary','preview'=>true]) ?></div>
+	<?php Block::endPut() ?>
+	
+	<!-- Layout execution -->
+	<?php Block::put('body') ?>
+	    <?= Form::open(['class'=>'layout stretch']) ?>
+	        <?= $this->makeLayout('form-with-sidebar') ?>
+	    <?= Form::close() ?>
+	<?php Block::endPut() ?>
 
 <?php else: ?>
-    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
+	<div class="control-breadcrumb">
+        <?= Block::placeholder('breadcrumb') ?>
+    </div>
+    <div class="padded-container">
+    	<p class="flash-message static error"><?= e(trans($this->fatalError)) ?></p>
+    	<p><a href="<?= Backend::url('dojo/inventory/stocks') ?>" class="btn btn-default"><?= e(trans('backend::lang.form.return_to_list')) ?></a></p>
+	</div>
 <?php endif ?>
-
-<p>
-    <a href="<?= Backend::url('dojo/inventory/stocks') ?>" class="btn btn-default oc-icon-chevron-left">
-        <?= e(trans('backend::lang.form.return_to_list')) ?>
-    </a>
-</p>

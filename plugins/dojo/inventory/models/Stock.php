@@ -45,6 +45,15 @@ class Stock extends Model
     		'photo' => 'System\Models\File'
     ];
     
+    public $belongsTo = [
+    		'product' => [
+    				'Dojo\Inventory\Models\Product'
+    		],
+    		'location' => [
+    				'Dojo\Inventory\Models\Location'
+    		],
+    ];
+    
     public function getRevisionableUser()
     {
     	return BackendAuth::getUser();
@@ -59,7 +68,7 @@ class Stock extends Model
     
     public function getStatusOptions($value, $formData)
     {
-    	return ['used' => 'Used','unused'=>'Unused','broken'=>'Broken'];
+    	return ['unused'=>'Unused','used' => 'Used','broken'=>'Broken'];
     }
     
 //     public function afterUpdate(){

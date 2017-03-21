@@ -1,7 +1,12 @@
 fields:
+    item_code:
+        label: 'dojo.inventory::lang.stock.item_code'
+        span: auto
+        placeholder: 'dojo.inventory::lang.stock.item_code'
+        type: text
     serial_number:
         label: 'dojo.inventory::lang.stock.serial_number'
-        span: left
+        span: right
         placeholder: 'dojo.inventory::lang.stock.serial_number'
         type: text
     product:
@@ -52,4 +57,5 @@ secondaryTabs:
                 extension: auto
             span: full
             type: fileupload
+            commentAbove: '250 x 250 pixels'
             tab: Misc

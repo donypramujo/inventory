@@ -54,5 +54,6 @@
         'description' => 'Description',
         'photo' => 'Photo',
         'status' => 'Status',
+        'item_code' => 'Item Code',
     ],
 ];
