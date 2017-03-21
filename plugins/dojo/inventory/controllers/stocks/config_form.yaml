@@ -1,0 +1,10 @@
+name: Stocks
+form: $/dojo/inventory/models/stock/fields.yaml
+modelClass: Dojo\Inventory\Models\Stock
+defaultRedirect: dojo/inventory/stocks
+create:
+    redirect: 'dojo/inventory/stocks/update/:id'
+    redirectClose: dojo/inventory/stocks
+update:
+    redirect: dojo/inventory/stocks
+    redirectClose: dojo/inventory/stocks

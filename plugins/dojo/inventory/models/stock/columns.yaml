@@ -1,0 +1,28 @@
+columns:
+    serial_number:
+        label: 'dojo.inventory::lang.plugin.name'
+        type: text
+    id:
+        label: id
+        type: number
+    location_id:
+        label: location_id
+        type: number
+    product_id:
+        label: product_id
+        type: number
+    description:
+        label: description
+        type: text
+    status:
+        label: status
+        type: text
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime
+    deleted_at:
+        label: deleted_at
+        type: datetime

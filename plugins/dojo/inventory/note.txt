@@ -6,8 +6,9 @@ last_status
 description
 product
 location
-created_by
-updated_by
+created_user_id
+updated_user_id
+deleted_user_id
 
 inventory_history
 id
@@ -15,5 +16,5 @@ inventory_id
 old_status
 new_status
 description
-created_by
+created_user_id
 created_at

@@ -26,6 +26,10 @@ navigation:
                 label: 'dojo.inventory::lang.product.product'
                 url: dojo/inventory/products
                 icon: icon-skyatlas
+    stock:
+        label: 'dojo.inventory::lang.stock.stock'
+        url: dojo/inventory/stocks
+        icon: icon-life-ring
 permissions:
     dojo.inventory.access_brands:
         tab: 'dojo.inventory::lang.permission.master_data'
@@ -39,3 +43,6 @@ permissions:
     dojo.inventory.access_locations:
         tab: 'dojo.inventory::lang.permission.master_data'
         label: 'dojo.inventory::lang.permission.manage_locations'
+    dojo.inventory.access_stocks:
+        tab: 'dojo.inventory::lang.permission.stock'
+        label: 'dojo.inventory::lang.permission.manage_stocks'

@@ -1,0 +1,55 @@
+fields:
+    serial_number:
+        label: 'dojo.inventory::lang.stock.serial_number'
+        span: left
+        placeholder: 'dojo.inventory::lang.stock.serial_number'
+        type: text
+    product:
+        label: 'dojo.inventory::lang.product.product'
+        nameFrom: code
+        descriptionFrom: name
+        prompt: 'dojo.inventory::lang.product.find_product'
+        list: $/dojo/inventory/models/product/columns.yaml
+        span: left
+        required: 1
+        type: recordfinder
+    location:
+        label: 'dojo.inventory::lang.location.location'
+        nameFrom: code
+        descriptionFrom: name
+        prompt: 'dojo.inventory::lang.location.find_location'
+        list: $/dojo/inventory/models/location/columns.yaml
+        span: auto
+        required: 1
+        type: recordfinder
+    status:
+        label: 'dojo.inventory::lang.stock.status'
+        span: auto
+        placeholder: 'dojo.inventory::lang.stock.status'
+        required: 1
+        type: dropdown
+    description:
+        label: 'dojo.inventory::lang.stock.description'
+        size: small
+        span: full
+        placeholder: 'dojo.inventory::lang.stock.description'
+        type: textarea
+secondaryTabs:
+    fields:
+        photo:
+            label: 'dojo.inventory::lang.stock.photo'
+            mode: image
+            imageWidth: 250
+            imageHeight: 250
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                offset:
+                    - 0
+                    - 0
+                quality: 90
+                sharpen: 0
+                extension: auto
+            span: full
+            type: fileupload
+            tab: Misc
