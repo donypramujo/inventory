@@ -7,8 +7,8 @@ plugin:
 navigation:
     master-data:
         label: 'dojo.inventory::lang.menuitem.master_data'
-        url: dojo/inventory/brands
-        icon: icon-home
+        url: dojo/inventory/users
+        icon: icon-clipboard
         sideMenu:
             user:
                 label: 'dojo.inventory::lang.menuitem.user'
@@ -29,11 +29,11 @@ navigation:
             product:
                 label: 'dojo.inventory::lang.product.product'
                 url: dojo/inventory/products
-                icon: icon-skyatlas
+                icon: icon-simplybuilt
     stock:
         label: 'dojo.inventory::lang.stock.stock'
         url: dojo/inventory/stocks
-        icon: icon-life-ring
+        icon: icon-bank
 permissions:
     dojo.inventory.access_brands:
         tab: 'dojo.inventory::lang.permission.master_data'
@@ -47,9 +47,12 @@ permissions:
     dojo.inventory.access_locations:
         tab: 'dojo.inventory::lang.permission.master_data'
         label: 'dojo.inventory::lang.permission.manage_locations'
-    dojo.inventory.access_stocks:
-        tab: 'dojo.inventory::lang.permission.stock'
-        label: 'dojo.inventory::lang.permission.manage_stocks'
     dojo.inventory.access_users:
         tab: 'dojo.inventory::lang.permission.master_data'
         label: 'dojo.inventory::lang.permission.manage_users'
+    dojo.inventory.access_stocks:
+        tab: 'dojo.inventory::lang.permission.stock'
+        label: 'dojo.inventory::lang.permission.manage_stocks'
+    dojo.inventory.access_stocks_per_location:
+        tab: 'dojo.inventory::lang.permission.stock'
+        label: 'dojo.inventory::lang.permission.manage_stocks_per_location'

@@ -17,10 +17,23 @@ class BuilderTableCreateDojoInventoryLocations extends Migration
             $table->timestamp('updated_at')->nullable();
             $table->timestamp('deleted_at')->nullable();
         });
+        
+        Schema::table('backend_users', function($table)
+        {
+        	$table->integer('location_id')->unsigned()->nullable();;
+        	$table->foreign('location_id')->references('id')->on('dojo_inventory_locations')
+        	->onUpdate('restrict')->onDelete('restrict');
+        
+        });
     }
     
     public function down()
     {
-        Schema::dropIfExists('dojo_inventory_locations');
+    	Schema::table('backend_users', function($table)
+    	{
+    		$table->dropForeign('backend_users_location_id_foreign');
+    		$table->dropColumn('location_id');
+    	});
+    	Schema::dropIfExists('dojo_inventory_locations');
     }
 }

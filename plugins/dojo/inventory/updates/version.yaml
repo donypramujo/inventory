@@ -8,4 +8,4 @@
     - builder_table_create_dojo_inventory_products.php
     - builder_table_create_dojo_inventory_stocks.php
     - builder_table_create_dojo_inventory_histories.php
-    - builder_table_update_backend_users.php
+    - seed_all_tables.php

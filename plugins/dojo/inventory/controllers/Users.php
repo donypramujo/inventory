@@ -1,6 +1,7 @@
 <?php namespace Dojo\Inventory\Controllers;
 
 use Backend\Classes\Controller;
+use Backend\Models\UserGroup;
 use BackendMenu;
 
 class Users extends Controller
@@ -19,19 +20,28 @@ class Users extends Controller
         BackendMenu::setContext('Dojo.Inventory', 'master-data', 'user');
     }
     
-//     /**
-//      * Called before the creation form is saved.
-//      * @param Model
-//      */
-//     public function formAfterCreate($model)
-//     {
-//     	$group = UserGroup::where('code', 'jury')->firstOrFail();
-//     	$model->groups()->attach($group);
-//     }
+    /**
+     * Called before the creation form is saved.
+     * @param Model
+     */
+    public function formAfterCreate($model)
+    {
+    	$group = UserGroup::where('code', 'dojo_inventory_user')->first();
+    	
+    	if(empty($group)){
+    		$group = UserGroup::create ( [
+    				'name' => 'User',
+    				'code' => 'dojo_inventory_user',
+    				'description' => 'Manage stock per location',
+    				'is_new_user_default' => 0
+    		]);
+    	}
+    	$model->groups()->attach($group);
+    }
     
-//     public function listExtendQuery($query)
-//     {
-//     	$query->juries();
-//     }
+    public function listExtendQuery($query)
+    {
+    	$query->onlyUser();
+    }
     
 }

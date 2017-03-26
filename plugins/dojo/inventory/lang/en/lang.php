@@ -17,6 +17,7 @@
     ],
     'menuitem' => [
         'master_data' => 'Master Data',
+        'user' => 'User',
     ],
     'permission' => [
         'master_data' => 'Master Data',
@@ -26,6 +27,8 @@
         'manage_locations' => 'Manage locations',
         'stock' => 'Stock',
         'manage_stocks' => 'Manage stocks',
+        'manage_users' => 'Manage users',
+        'manage_stocks_per_location' => 'Manage stocks per location',
     ],
     'category' => [
         'id' => 'ID',

@@ -27,7 +27,13 @@ columns:
     email:
         label: backend::lang.user.email
         searchable: true
-
+    location:
+        label: 'dojo.inventory::lang.location.location'
+        type: text
+        relation: location
+        select: name
+        searchable: true
+        sortable: true
     groups:
         label: backend::lang.user.groups
         relation: groups

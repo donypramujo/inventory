@@ -6,7 +6,15 @@ fields:
   email:
     span: right
     label: backend::lang.user.email
-
+  location:
+        label: 'dojo.inventory::lang.location.location'
+        nameFrom: code
+        descriptionFrom: name
+        prompt: 'dojo.inventory::lang.location.find_location'
+        list: $/dojo/inventory/models/location/columns.yaml
+        span: left
+        required: 1
+        type: recordfinder
   send_invite:
     context: create
     type: checkbox

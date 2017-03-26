@@ -1,0 +1,10 @@
+scopes:
+    location: 
+        label: dojo.inventory::lang.location.location
+        modelClass: Dojo\Inventory\Models\Location
+        conditions: location_id in (:filtered)
+        nameFrom: name
+    last_login:
+        label: backend::lang.user.last_login
+        type: daterange
+        conditions: last_login >= ':after' AND last_login <= ':before'
