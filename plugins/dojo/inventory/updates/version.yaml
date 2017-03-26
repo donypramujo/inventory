@@ -1,7 +1,5 @@
-1.0.1:
+1.0.12:
     - 'Initialize plugin.'
-1.0.11:
-    - 'Created tables'
     - builder_table_create_dojo_inventory_brands.php
     - builder_table_create_dojo_inventory_categories.php
     - builder_table_create_dojo_inventory_locations.php
