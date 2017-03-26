@@ -1,0 +1,10 @@
+name: Users
+modelClass: Dojo\Inventory\Models\User
+form: $/dojo/inventory/models/user/fields.yaml
+defaultRedirect: dojo/inventory/users
+create:
+    redirect: 'dojo/inventory/users/update/:id'
+    redirectClose: dojo/inventory/users
+update:
+    redirect: dojo/inventory/users
+    redirectClose: dojo/inventory/users

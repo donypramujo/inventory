@@ -3,11 +3,13 @@ fields:
         label: 'dojo.inventory::lang.stock.item_code'
         span: auto
         placeholder: 'dojo.inventory::lang.stock.item_code'
+        required: 1
         type: text
     serial_number:
         label: 'dojo.inventory::lang.stock.serial_number'
         span: right
         placeholder: 'dojo.inventory::lang.stock.serial_number'
+        required: 1
         type: text
     product:
         label: 'dojo.inventory::lang.product.product'

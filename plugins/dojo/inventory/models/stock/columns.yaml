@@ -1,28 +1,48 @@
 columns:
+    item_code:
+        label: 'dojo.inventory::lang.stock.item_code'
+        type: text
+        searchable: true
+        sortable: true
     serial_number:
-        label: 'dojo.inventory::lang.plugin.name'
+        label: 'dojo.inventory::lang.stock.serial_number'
         type: text
-    id:
-        label: id
-        type: number
-    location_id:
-        label: location_id
-        type: number
-    product_id:
-        label: product_id
-        type: number
-    description:
-        label: description
+        searchable: true
+        sortable: true
+    location:
+        label: 'dojo.inventory::lang.location.location'
         type: text
+        relation: location
+        select: name
+        searchable: true
+        sortable: true
+    product:
+        label: 'dojo.inventory::lang.product.product'
+        type: text
+        relation: product
+        select: name
+        searchable: true
+        sortable: true
     status:
-        label: status
+        label: 'dojo.inventory::lang.stock.status'
+        type: text
+        searchable: true
+        sortable: true
+    description:
+        label: 'dojo.inventory::lang.stock.description'
         type: text
     created_at:
-        label: created_at
+        label: 'dojo.inventory::lang.model.created_at'
         type: datetime
+        invisible: true
+        sortable: true
     updated_at:
-        label: updated_at
+        label: 'dojo.inventory::lang.model.updated_at'
         type: datetime
+        invisible: true
+        sortable: true
     deleted_at:
-        label: deleted_at
+        label: 'dojo.inventory::lang.model.deleted_at'
         type: datetime
+        invisible: true
+        sortable: true

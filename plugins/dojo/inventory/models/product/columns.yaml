@@ -2,9 +2,9 @@ columns:
     id:
         label: 'dojo.inventory::lang.product.id'
         type: number
+        invisible: true
         searchable: true
         sortable: true
-        invisible: true
     code: 
         label: 'dojo.inventory::lang.product.code'
         type: text
@@ -15,25 +15,32 @@ columns:
         type: text
         searchable: true
         sortable: true
-    brand[name]: 
+    brand: 
         label: 'dojo.inventory::lang.brand.brand'
         type: text
+        relation: brand
+        select: name
         searchable: true
         sortable: true
-    category[name]: 
+    category: 
         label: 'dojo.inventory::lang.category.category'
         type: text
+        relation: category
+        select: name
         searchable: true
         sortable: true
     created_at:
         label: created_at
         type: datetime
         invisible: true
+        sortable: true
     updated_at:
         label: updated_at
         type: datetime
         invisible: true
+        sortable: true
     deleted_at:
         label: deleted_at
         type: datetime
+        sortable: true
         invisible: true
