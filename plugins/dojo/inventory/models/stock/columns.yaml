@@ -16,13 +16,19 @@ columns:
         select: name
         searchable: true
         sortable: true
-    product:
+    _product:
         label: 'dojo.inventory::lang.product.product'
         type: text
         relation: product
         select: name
         searchable: true
         sortable: true
+    product[brand][name]: 
+        label: 'dojo.inventory::lang.brand.brand'
+        type: text
+    product[category][name]: 
+        label: 'dojo.inventory::lang.category.category'
+        type: text
     status:
         label: 'dojo.inventory::lang.stock.status'
         type: text
@@ -46,3 +52,19 @@ columns:
         type: datetime
         invisible: true
         sortable: true
+    _created_by:
+        label: 'dojo.inventory::lang.model.created_by'
+        type: text
+        relation: createdBy
+        select: login
+        searchable: true
+        sortable: true
+        invisible: true
+    _updated_by:
+        label: 'dojo.inventory::lang.model.updated_by'
+        type: text
+        relation: updatedBy
+        select: login
+        searchable: true
+        sortable: true
+        invisible: true

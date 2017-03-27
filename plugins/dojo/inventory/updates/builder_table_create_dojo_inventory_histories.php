@@ -11,18 +11,15 @@ class BuilderTableCreateDojoInventoryHistories extends Migration
         {
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
-            $table->string('description', 255);
-            $table->string('old_status', 10);
-            $table->string('new_status', 10);
-            $table->string('type', 10);
+            $table->string('old_status', 10)->nullable();
+            $table->string('new_status', 10)->nullable();
+            $table->string('type', 10)->nullable();
             
-            $table->integer('stock_id')->unsigned();
-            $table->foreign('stock_id')->references('id')->on('dojo_inventory_stocks')
-            ->onUpdate('restrict')->onDelete('restrict');
+            $table->integer('stock_id')->unsigned()->nullable();
+            $table->foreign('stock_id')->references('id')->on('dojo_inventory_stocks');
             
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('backend_users')
-            ->onUpdate('restrict')->onDelete('restrict');
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('backend_users');
             
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();

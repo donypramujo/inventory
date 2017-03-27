@@ -8,7 +8,7 @@ navigation:
     master-data:
         label: 'dojo.inventory::lang.menuitem.master_data'
         url: dojo/inventory/users
-        icon: icon-clipboard
+        icon: icon-home
         sideMenu:
             user:
                 label: 'dojo.inventory::lang.menuitem.user'
@@ -33,7 +33,7 @@ navigation:
     stock:
         label: 'dojo.inventory::lang.stock.stock'
         url: dojo/inventory/stocks
-        icon: icon-bank
+        icon: icon-briefcase
 permissions:
     dojo.inventory.access_brands:
         tab: 'dojo.inventory::lang.permission.master_data'

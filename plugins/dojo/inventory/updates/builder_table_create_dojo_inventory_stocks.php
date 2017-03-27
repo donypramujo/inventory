@@ -24,6 +24,13 @@ class BuilderTableCreateDojoInventoryStocks extends Migration
             $table->foreign('location_id')->references('id')->on('dojo_inventory_locations')
             ->onUpdate('restrict')->onDelete('restrict');
             
+            $table->integer('created_by')->unsigned()->nullable();
+            $table->foreign('created_by')->references('id')->on('backend_users')
+            ->onUpdate('restrict')->onDelete('restrict');
+            
+            $table->integer('updated_by')->unsigned()->nullable();
+            $table->foreign('updated_by')->references('id')->on('backend_users')
+            ->onUpdate('restrict')->onDelete('restrict');
 
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();

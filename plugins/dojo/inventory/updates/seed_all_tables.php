@@ -3,7 +3,7 @@
 namespace Dojo\Inventory\Updates;
 
 use Backend\Models\UserGroup;
-use Illuminate\Database\Seeder;
+use October\Rain\Database\Updates\Seeder;
 
 class SeedAllTables extends Seeder {
 	public function run() {

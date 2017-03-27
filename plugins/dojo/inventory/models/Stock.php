@@ -20,6 +20,12 @@ class Stock extends Model
      * Validation
      */
     public $rules = [
+    		'item_code' => 'required|unique:dojo_inventory_stocks,item_code,NULL,id,deleted_at,NULL|max:50',
+    		'serial_number' => 'required|max:100',
+    		'status' => 'required',
+    		'product_id' => 'required',
+    		'location_id' => 'required',
+    		
     ];
     public $attributeNames = [ ];
 
@@ -32,8 +38,9 @@ class Stock extends Model
     /**
      * @var array Monitor these attributes for changes.
      */
-    protected $revisionable = ['serial_number'];
+    protected $revisionable = ['item_code','serial_number','description','status','product_id','location_id','deleted_at'];
     
+    public $revisionableLimit = 1000;
     /**
      * @var array Relations
      */
@@ -52,6 +59,12 @@ class Stock extends Model
     		'location' => [
     				'Dojo\Inventory\Models\Location'
     		],
+    		'createdBy' => [
+    				'Backend\Models\User','key'=>'created_by'
+    		],
+    		'updatedBy' => [
+    				'Backend\Models\User','key'=>'updated_by'
+    		]
     ];
     
     public function getRevisionableUser()
@@ -61,8 +74,11 @@ class Stock extends Model
     
     public function beforeValidate() {
     	$this->attributeNames = [
-    			'code' => trans ( 'dojo.inventory::lang.brand.code' ),
-    			'name' => trans ( 'dojo.inventory::lang.brand.name' ),
+    			'item_code' => trans ( 'dojo.inventory::lang.stock.item_code' ),
+    			'serial_number' => trans ( 'dojo.inventory::lang.stock.serial_number' ),
+    			'status' => trans ( 'dojo.inventory::lang.stock.status' ),
+    			'product_id' => trans ( 'dojo.inventory::lang.product.product' ),
+    			'location_id' => trans ( 'dojo.inventory::lang.location.location' ),
     	];
     }
     
@@ -71,7 +87,57 @@ class Stock extends Model
     	return ['unused'=>'Unused','used' => 'Used','broken'=>'Broken'];
     }
     
-//     public function afterUpdate(){
-//     	logger('mantap euy');
-//     }
+    public function beforeCreate(){
+    	$this->createdBy()->associate(BackendAuth::getUser());
+    	
+    }
+    
+    public function beforeUpdate(){
+    	if($this->isDirty()){
+    		$this->updatedBy()->associate(BackendAuth::getUser());
+    	}
+    }
+    
+    
+    public function afterCreate(){
+    	History::insert([
+    			'new_status' => $this->status,
+    			'type' => 'create',
+    			'stock_id' => $this->id,
+    			'user_id' => BackendAuth::getUser()->id,
+    			
+    	]);
+    }
+    
+    public function afterUpdate(){
+    	
+    	
+    	if($this->isDirty('status')){
+    		
+    		$new_status = $this->getDirty()['status'];
+    		$old_status = array_get($this->original, 'status');
+    		
+    		History::insert([
+    				'old_status' => $old_status,
+    				'new_status' => $new_status,
+    				'type' => 'updated',
+    				'stock_id' => $this->id,
+    				'user_id' => BackendAuth::getUser()->id,
+    				 
+    		]);
+    	}
+    	
+    	
+    	
+    }
+    
+    public function beforeDelete(){
+    	History::insert([
+    			'old_status' => $this->status,
+    			'type' => 'delete',
+    			'stock_id' => $this->id,
+    			'user_id' => BackendAuth::getUser()->id,
+    			 
+    	]);
+    }
 }

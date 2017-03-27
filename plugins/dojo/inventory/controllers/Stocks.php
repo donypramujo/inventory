@@ -23,6 +23,8 @@ class Stocks extends Controller
         BackendMenu::setContext('Dojo.Inventory', 'stock');
     }
     
+   
+    
 //     public function formBeforeSave($model)
 //     {
 //     }
