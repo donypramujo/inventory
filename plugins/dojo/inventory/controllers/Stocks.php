@@ -2,7 +2,6 @@
 
 use Backend\Classes\Controller;
 use BackendMenu;
-use Dojo\Inventory\Models\History;
 
 class Stocks extends Controller
 {
@@ -23,28 +22,10 @@ class Stocks extends Controller
         BackendMenu::setContext('Dojo.Inventory', 'stock');
     }
     
-   
     
-//     public function formBeforeSave($model)
-//     {
-//     }
-    
-//     public function formAfterSave($model)
-//     {
+    public function test(){
     	
-//     }
-    
-//     public function update($recordId, $context = null)
-//     {
-
-//     	$history= new History();
-    	
-//     	$history->description  = 'test';
-//     	$history->save();
-   			 	
-//     	return $this->asExtension('FormController')->update($recordId, $context);
-//     }
-    
-    
-    
+//     	return View::make('dojo.inventory::bapuk', ['name' => 'Charlie']);
+    }
+  
 }

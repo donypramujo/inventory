@@ -1,0 +1,23 @@
+columns:
+    _stock_item_code:
+        label: 'dojo.inventory::lang.stock.item_code'
+        type: text
+        relation: stock
+        select: item_code
+    old_status:
+        label: old_status
+        type: text
+    new_status:
+        label: new_status
+        type: text
+    _user_logon:
+        label: 'dojo.inventory::lang.model.created_by'
+        type: text
+        relation: user
+        select: login
+    type:
+        label: type
+        type: text
+    created_at:
+        label: created_at
+        type: datetime

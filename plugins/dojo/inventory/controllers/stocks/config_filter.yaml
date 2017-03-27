@@ -1,0 +1,11 @@
+scopes:
+    location: 
+        label: dojo.inventory::lang.location.location
+        modelClass: Dojo\Inventory\Models\Location
+        conditions: location_id in (:filtered)
+        nameFrom: name
+    product:
+        label: dojo.inventory::lang.product.product
+        modelClass: Dojo\Inventory\Models\Product
+        conditions: product_id in (:filtered)
+        nameFrom: name

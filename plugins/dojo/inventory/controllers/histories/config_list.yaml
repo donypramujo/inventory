@@ -1,0 +1,8 @@
+title: Histories
+modelClass: Dojo\Inventory\Models\History
+list: $/dojo/inventory/models/history/columns.yaml
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+toolbar:
+    search:
+        prompt: 'backend::lang.list.search_prompt'

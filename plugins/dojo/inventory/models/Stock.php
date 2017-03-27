@@ -100,13 +100,15 @@ class Stock extends Model
     
     
     public function afterCreate(){
-    	History::insert([
-    			'new_status' => $this->status,
-    			'type' => 'create',
-    			'stock_id' => $this->id,
-    			'user_id' => BackendAuth::getUser()->id,
-    			
-    	]);
+    	
+    	$history = new History();
+    	
+    	$history->new_status = $this->status;
+    	$history->type = 'create';
+    	$history->stock_id = $this->id;
+    	$history->user_id = BackendAuth::getUser()->id;
+    	
+    	$history->save();
     }
     
     public function afterUpdate(){
@@ -117,14 +119,17 @@ class Stock extends Model
     		$new_status = $this->getDirty()['status'];
     		$old_status = array_get($this->original, 'status');
     		
-    		History::insert([
-    				'old_status' => $old_status,
-    				'new_status' => $new_status,
-    				'type' => 'updated',
-    				'stock_id' => $this->id,
-    				'user_id' => BackendAuth::getUser()->id,
-    				 
-    		]);
+    		
+    		$history = new History();
+    		
+    		$history->old_status = $old_status;
+    		$history->new_status = $new_status;
+    		$history->type = 'update';
+    		$history->stock_id = $this->id;
+    		$history->user_id = BackendAuth::getUser()->id;
+    		
+    		$history->save();
+    		
     	}
     	
     	
@@ -132,12 +137,21 @@ class Stock extends Model
     }
     
     public function beforeDelete(){
-    	History::insert([
-    			'old_status' => $this->status,
-    			'type' => 'delete',
-    			'stock_id' => $this->id,
-    			'user_id' => BackendAuth::getUser()->id,
-    			 
-    	]);
+    	
+    	$history = new History();
+    	
+    	$history->old_status = $this->status;
+    	$history->type = 'delete';
+    	$history->stock_id = $this->id;
+    	$history->user_id = BackendAuth::getUser()->id;
+    	
+    	$history->save();
+    }
+    
+    public function filterFields($fields, $context = null)
+    {
+    	if ($context == 'update') {
+    		$fields->item_code->readOnly = true;
+    	}
     }
 }

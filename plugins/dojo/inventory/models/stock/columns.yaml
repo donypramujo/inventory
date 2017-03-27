@@ -16,7 +16,7 @@ columns:
         select: name
         searchable: true
         sortable: true
-    _product:
+    _product_name:
         label: 'dojo.inventory::lang.product.product'
         type: text
         relation: product

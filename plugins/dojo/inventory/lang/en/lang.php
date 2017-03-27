@@ -7,8 +7,8 @@
         'created_at' => 'Created At',
         'updated_at' => 'Updated At',
         'deleted_at' => 'Deleted At',
-    		'created_by' => 'Created By',
-    		'updated_by' => 'Updated By',
+        'created_by' => 'Created By',
+        'updated_by' => 'Updated By',
     ],
     'brand' => [
         'id' => 'ID',
@@ -20,6 +20,7 @@
     'menuitem' => [
         'master_data' => 'Master Data',
         'user' => 'User',
+        'log' => 'Log',
     ],
     'permission' => [
         'master_data' => 'Master Data',
@@ -31,6 +32,8 @@
         'manage_stocks' => 'Manage stocks',
         'manage_users' => 'Manage users',
         'manage_stocks_per_location' => 'Manage stocks per location',
+        'log' => 'Log',
+        'manage_stock_log' => 'Manage stock log',
     ],
     'category' => [
         'id' => 'ID',

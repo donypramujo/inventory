@@ -34,6 +34,10 @@ navigation:
         label: 'dojo.inventory::lang.stock.stock'
         url: dojo/inventory/stocks
         icon: icon-briefcase
+    Log:
+        label: 'dojo.inventory::lang.menuitem.log'
+        url: dojo/inventory/histories
+        icon: icon-print
 permissions:
     dojo.inventory.access_brands:
         tab: 'dojo.inventory::lang.permission.master_data'
@@ -56,3 +60,6 @@ permissions:
     dojo.inventory.access_stocks_per_location:
         tab: 'dojo.inventory::lang.permission.stock'
         label: 'dojo.inventory::lang.permission.manage_stocks_per_location'
+    dojo.inventory.access_stock_log:
+        tab: 'dojo.inventory::lang.permission.log'
+        label: 'dojo.inventory::lang.permission.manage_stock_log'

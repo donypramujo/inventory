@@ -19,4 +19,13 @@ class History extends Model
      * @var string The database table used by the model.
      */
     public $table = 'dojo_inventory_histories';
+    
+    public $belongsTo = [
+    		'stock' => [
+    				'Dojo\Inventory\Models\Stock'
+    		],
+    		'user' => [
+    				'Backend\Models\User'
+    		],
+    ];
 }
