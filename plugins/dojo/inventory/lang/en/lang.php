@@ -64,4 +64,9 @@
         'status' => 'Status',
         'item_code' => 'Item Code',
     ],
+	'status' => [
+		'unused' =>'Unused',
+		'used' => 'Used',
+		'broken' => 'Broken'
+	],
 ];

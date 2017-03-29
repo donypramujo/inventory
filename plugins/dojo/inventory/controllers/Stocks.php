@@ -2,6 +2,7 @@
 
 use Backend\Classes\Controller;
 use BackendMenu;
+use Backend\Facades\Backend;
 
 class Stocks extends Controller
 {
@@ -22,10 +23,50 @@ class Stocks extends Controller
         BackendMenu::setContext('Dojo.Inventory', 'stock');
     }
     
-    
-    public function test(){
+    public function listOverrideColumnValue($record, $columnName, $definition = null)
+    {
     	
-//     	return View::make('dojo.inventory::bapuk', ['name' => 'Charlie']);
+    	if($columnName == 'status'){
+    		
+    		if($record->status == 'unused'){
+    			return '<span class="list-badge badge-info">
+                        <i class="icon-info"></i>
+                    </span>'.$record->getStatuses()[$record->status];
+    		}
+
+    		if($record->status == 'used'){
+    			return '<span class="list-badge badge-success">
+                        <i class="icon-check"></i>
+                    </span>'.$record->getStatuses()[$record->status];
+    		}
+    		
+
+    		if($record->status == 'broken'){
+    			return '<span class="list-badge badge-danger">
+                        <i class="icon-times"></i>
+                    </span>'.$record->getStatuses()[$record->status];
+    		}
+
+    		return $record->getStatuses()[$record->status];
+    	}
+    	
+    }
+    
+    public function listExtendQuery($query)
+    {
+    	
+    	$flag = $this->user->hasPermission('dojo.inventory.access_stocks_per_location');
+    	
+    	if($flag){
+    		
+    		return $query->whereHas('location', function ($query) {
+    			$query->where('id', $this->user->location_id );
+    		});
+    	}
+    	
+    	return $query;
+    	
+    	logger($b?" isinya bro":'berak');
     }
   
 }

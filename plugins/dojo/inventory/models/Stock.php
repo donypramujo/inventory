@@ -80,16 +80,30 @@ class Stock extends Model
     			'product_id' => trans ( 'dojo.inventory::lang.product.product' ),
     			'location_id' => trans ( 'dojo.inventory::lang.location.location' ),
     	];
+    	
+    	$flag = BackendAuth::getUser()->hasPermission('dojo.inventory.access_stocks_per_location');
+    	if($flag) {
+    		$this->location()->associate(BackendAuth::getUser()->location);
+    	}
     }
     
     public function getStatusOptions($value, $formData)
     {
-    	return ['unused'=>'Unused','used' => 'Used','broken'=>'Broken'];
+    	return ['unused'=>trans ( 'dojo.inventory::lang.status.unused' ),
+    			'used' => trans ( 'dojo.inventory::lang.status.used' ),
+    			'broken'=>trans ( 'dojo.inventory::lang.status.broken' )];
+    }
+    
+    public function getStatuses()
+    {
+    	return ['unused'=>trans ( 'dojo.inventory::lang.status.unused' ),
+    			'used' => trans ( 'dojo.inventory::lang.status.used' ),
+    			'broken'=>trans ( 'dojo.inventory::lang.status.broken' )];
     }
     
     public function beforeCreate(){
     	$this->createdBy()->associate(BackendAuth::getUser());
-    	
+    
     }
     
     public function beforeUpdate(){
@@ -152,6 +166,11 @@ class Stock extends Model
     {
     	if ($context == 'update') {
     		$fields->item_code->readOnly = true;
+    	}
+    	
+    	$flag = BackendAuth::getUser()->hasPermission('dojo.inventory.access_stocks_per_location');
+    	if($flag){
+    		$fields->location->hidden = true;
     	}
     }
 }

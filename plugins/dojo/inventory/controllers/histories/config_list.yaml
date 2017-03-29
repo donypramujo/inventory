@@ -2,6 +2,7 @@ title: Histories
 modelClass: Dojo\Inventory\Models\History
 list: $/dojo/inventory/models/history/columns.yaml
 noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
 showSetup: true
 toolbar:
     search:

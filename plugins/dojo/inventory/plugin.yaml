@@ -9,35 +9,55 @@ navigation:
         label: 'dojo.inventory::lang.menuitem.master_data'
         url: dojo/inventory/users
         icon: icon-home
+        permissions:
+            - dojo.inventory.access_users
+            - dojo.inventory.access_locations
+            - dojo.inventory.access_brands
+            - dojo.inventory.access_categories
+            - dojo.inventory.access_products
         sideMenu:
             user:
                 label: 'dojo.inventory::lang.menuitem.user'
                 url: dojo/inventory/users
                 icon: icon-users
+                permissions:
+                    - dojo.inventory.access_users
             location:
                 label: 'dojo.inventory::lang.location.location'
                 url: dojo/inventory/locations
                 icon: icon-map-marker
+                permissions:
+                    - dojo.inventory.access_locations
             brand:
                 label: 'dojo.inventory::lang.brand.brand'
                 url: dojo/inventory/brands
                 icon: icon-archive
+                permissions:
+                    - dojo.inventory.access_brands
             category:
                 label: 'dojo.inventory::lang.category.category'
                 url: dojo/inventory/categories
                 icon: icon-navicon
+                permissions:
+                    - dojo.inventory.access_categories
             product:
                 label: 'dojo.inventory::lang.product.product'
                 url: dojo/inventory/products
                 icon: icon-simplybuilt
+                permissions:
+                    - dojo.inventory.access_products
     stock:
         label: 'dojo.inventory::lang.stock.stock'
         url: dojo/inventory/stocks
         icon: icon-briefcase
+        permissions:
+            - dojo.inventory.access_stocks
     Log:
         label: 'dojo.inventory::lang.menuitem.log'
         url: dojo/inventory/histories
         icon: icon-print
+        permissions:
+            - dojo.inventory.access_stock_log
 permissions:
     dojo.inventory.access_brands:
         tab: 'dojo.inventory::lang.permission.master_data'

@@ -2,6 +2,7 @@ list: $/dojo/inventory/models/category/columns.yaml
 modelClass: Dojo\Inventory\Models\Category
 title: Categories
 noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
 showSetup: true
 showCheckboxes: true
 toolbar:

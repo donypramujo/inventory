@@ -12,6 +12,7 @@ class Users extends Controller
     public $formConfig = 'config_form.yaml';
 
     public $requiredPermissions = [
+    		'dojo.inventory.access_users'
     ];
     public $bodyClass = 'compact-container';
     public function __construct()
