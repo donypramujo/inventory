@@ -1,0 +1,19 @@
+scopes:
+    location: 
+        label: dojo.inventory::lang.location.location
+        modelClass: Dojo\Inventory\Models\Location
+        conditions: location_id in (:filtered)
+        nameFrom: name
+    product:
+      label:  dojo.inventory::lang.product.product
+      modelClass: Dojo\Inventory\Models\Location
+      conditions: location_id in (:filtered)
+      nameFrom: name
+    status:
+      label:  dojo.inventory::lang.stock.status
+      type: group
+      conditions: status in (:filtered)
+      options:
+          unused: Unused
+          used: Used
+          broken: Broken
