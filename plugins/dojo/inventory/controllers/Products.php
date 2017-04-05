@@ -11,7 +11,8 @@ class Products extends Controller
     public $formConfig = 'config_form.yaml';
 
     public $requiredPermissions = [
-        'dojo.inventory.access_products' 
+        'dojo.inventory.access_products',
+    	'dojo.inventory.access_view_products'
     ];
 
     public function __construct()
@@ -29,4 +30,26 @@ class Products extends Controller
 //         	$query->withTrashed();
 //     	}]);
 //     }
+
+    public function listExtendColumns($host) {
+    	if ($this->user->hasAccess ( 'dojo.inventory.access_products' )) {
+    	} else if ($this->user->hasAccess ( 'dojo.inventory.access_view_products' )) {
+    		$host->showCheckboxes = false;
+    		$host->recordUrl = 'dojo/inventory/products/preview/:id';
+    	}
+    }
+    public function update($recordId, $context = null) {
+    	if ($this->user->hasAccess ( 'dojo.inventory.access_products' )) {
+    		return $this->asExtension ( 'FormController' )->update ( $recordId, $context );
+    	} else if ($this->user->hasAccess ( 'dojo.inventory.access_view_products' )) {
+    		return response ( view ( 'cms::404' ), '404' );
+    	}
+    }
+    public function create($context = null) {
+    	if ($this->user->hasAccess ( 'dojo.inventory.access_products' )) {
+    		return $this->asExtension ( 'FormController' )->create ( $context );
+    	} else if ($this->user->hasAccess ( 'dojo.inventory.access_view_products' )) {
+    		return response ( view ( 'cms::404' ), '404' );
+    	}
+    }
 }

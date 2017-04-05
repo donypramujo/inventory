@@ -13,9 +13,13 @@ navigation:
             - dojo.inventory.access_users
             - dojo.inventory.access_locations
             - dojo.inventory.access_brands
-            - dojo.inventory.access_view_brands
             - dojo.inventory.access_categories
             - dojo.inventory.access_products
+            - dojo.inventory.access_view_locations
+            - dojo.inventory.access_view_users
+            - dojo.inventory.access_view_products
+            - dojo.inventory.access_view_categories
+            - dojo.inventory.access_view_brands
         sideMenu:
             user:
                 label: 'dojo.inventory::lang.menuitem.user'
@@ -23,12 +27,14 @@ navigation:
                 icon: icon-users
                 permissions:
                     - dojo.inventory.access_users
+                    - dojo.inventory.access_view_users
             location:
                 label: 'dojo.inventory::lang.location.location'
                 url: dojo/inventory/locations
                 icon: icon-map-marker
                 permissions:
                     - dojo.inventory.access_locations
+                    - dojo.inventory.access_view_locations
             brand:
                 label: 'dojo.inventory::lang.brand.brand'
                 url: dojo/inventory/brands
@@ -42,12 +48,14 @@ navigation:
                 icon: icon-navicon
                 permissions:
                     - dojo.inventory.access_categories
+                    - dojo.inventory.access_view_categories
             product:
                 label: 'dojo.inventory::lang.product.product'
                 url: dojo/inventory/products
                 icon: icon-simplybuilt
                 permissions:
                     - dojo.inventory.access_products
+                    - dojo.inventory.access_view_products
     stock:
         label: 'dojo.inventory::lang.stock.stock'
         url: dojo/inventory/stocks
@@ -84,17 +92,29 @@ permissions:
         tab: 'dojo.inventory::lang.permission.brand'
         label: 'dojo.inventory::lang.permission.view_brands'
     dojo.inventory.access_categories:
-        tab: 'dojo.inventory::lang.permission.master_data'
+        tab: 'dojo.inventory::lang.permission.category'
         label: 'dojo.inventory::lang.permission.manage_categories'
+    dojo.inventory.access_view_categories:
+        tab: 'dojo.inventory::lang.permission.category'
+        label: 'dojo.inventory::lang.permission.view_categories'
     dojo.inventory.access_products:
-        tab: 'dojo.inventory::lang.permission.master_data'
+        tab: 'dojo.inventory::lang.permission.product'
         label: 'dojo.inventory::lang.permission.manage_products'
+    dojo.inventory.access_view_products:
+        tab: 'dojo.inventory::lang.permission.product'
+        label: 'dojo.inventory::lang.permission.view_products'
     dojo.inventory.access_locations:
-        tab: 'dojo.inventory::lang.permission.master_data'
+        tab: 'dojo.inventory::lang.permission.location'
         label: 'dojo.inventory::lang.permission.manage_locations'
+    dojo.inventory.access_view_locations:
+        tab: 'dojo.inventory::lang.permission.location'
+        label: 'dojo.inventory::lang.permission.view_locations'
     dojo.inventory.access_users:
-        tab: 'dojo.inventory::lang.permission.master_data'
+        tab: 'dojo.inventory::lang.permission.user'
         label: 'dojo.inventory::lang.permission.manage_users'
+    dojo.inventory.access_view_users:
+        tab: 'dojo.inventory::lang.permission.user'
+        label: 'dojo.inventory::lang.permission.view_users'
     dojo.inventory.access_stocks:
         tab: 'dojo.inventory::lang.permission.stock'
         label: 'dojo.inventory::lang.permission.manage_stocks'

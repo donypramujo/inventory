@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Dojo\Inventory\Controllers;
 
 use Backend\Classes\Controller;
@@ -15,20 +14,14 @@ class Users extends Controller {
 	public $listConfig = 'config_list.yaml';
 	public $formConfig = 'config_form.yaml';
 	public $requiredPermissions = [ 
-			'dojo.inventory.access_users' 
+			'dojo.inventory.access_users',
+			'dojo.inventory.access_view_users' 
 	];
 	public $bodyClass = 'compact-container';
 	public function __construct() {
 		parent::__construct ();
 		BackendMenu::setContext ( 'Dojo.Inventory', 'master-data', 'user' );
 	}
-	
-	/**
-	 * Called before the creation form is saved.
-	 * 
-	 * @param
-	 *        	Model
-	 */
 	public function formAfterCreate($model) {
 		$group = UserGroup::where ( 'code', 'dojo_inventory_user' )->first ();
 		
@@ -45,6 +38,25 @@ class Users extends Controller {
 	public function listExtendQuery($query) {
 		$query->onlyUser ();
 	}
-	
-    
+	public function listExtendColumns($host) {
+		if ($this->user->hasAccess ( 'dojo.inventory.access_users' )) {
+		} else if ($this->user->hasAccess ( 'dojo.inventory.access_view_users' )) {
+			$host->showCheckboxes = false;
+			$host->recordUrl = 'dojo/inventory/users/preview/:id';
+		}
+	}
+	public function update($recordId, $context = null) {
+		if ($this->user->hasAccess ( 'dojo.inventory.access_users' )) {
+			return $this->asExtension ( 'FormController' )->update ( $recordId, $context );
+		} else if ($this->user->hasAccess ( 'dojo.inventory.access_view_users' )) {
+			return response ( view ( 'cms::404' ), '404' );
+		}
+	}
+	public function create($context = null) {
+		if ($this->user->hasAccess ( 'dojo.inventory.access_users' )) {
+			return $this->asExtension ( 'FormController' )->create ( $context );
+		} else if ($this->user->hasAccess ( 'dojo.inventory.access_view_users' )) {
+			return response ( view ( 'cms::404' ), '404' );
+		}
+	}
 }
