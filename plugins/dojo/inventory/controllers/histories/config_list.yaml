@@ -4,6 +4,8 @@ list: $/dojo/inventory/models/history/columns.yaml
 noRecordsMessage: 'backend::lang.list.no_records'
 recordsPerPage: 20
 showSetup: true
+filter: config_filter.yaml
 toolbar:
+    buttons: list_toolbar
     search:
         prompt: 'backend::lang.list.search_prompt'

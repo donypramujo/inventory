@@ -1,7 +1,7 @@
 <?php namespace Dojo\Inventory\Models;
 
-use Model;
 use Backend\Facades\BackendAuth;
+use Model;
 
 /**
  * Model
@@ -10,7 +10,7 @@ class Brand extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     
-    use \October\Rain\Database\Traits\SoftDelete;
+//     use \October\Rain\Database\Traits\SoftDelete;
     
     use \October\Rain\Database\Traits\Revisionable;
 
@@ -53,4 +53,6 @@ class Brand extends Model
     			'name' => trans ( 'dojo.inventory::lang.brand.name' ),
     	];
     }
+    
+ 
 }

@@ -81,10 +81,13 @@ class Stock extends Model
     			'location_id' => trans ( 'dojo.inventory::lang.location.location' ),
     	];
     	
-    	$flag = BackendAuth::getUser()->hasPermission('dojo.inventory.access_stocks_per_location');
-    	if($flag) {
+    	
+    	if(BackendAuth::getUser()->hasAccess('dojo.inventory.access_stocks')){
+    		
+    	}else if(BackendAuth::getUser()->hasAccess('dojo.inventory.access_stocks_per_location')){
     		$this->location()->associate(BackendAuth::getUser()->location);
     	}
+    	
     }
     
     public function getStatusOptions($value, $formData)
@@ -145,9 +148,6 @@ class Stock extends Model
     		$history->save();
     		
     	}
-    	
-    	
-    	
     }
     
     public function beforeDelete(){
@@ -168,8 +168,9 @@ class Stock extends Model
     		$fields->item_code->readOnly = true;
     	}
     	
-    	$flag = BackendAuth::getUser()->hasPermission('dojo.inventory.access_stocks_per_location');
-    	if($flag){
+    	if(BackendAuth::getUser()->hasAccess('dojo.inventory.access_stocks')){
+    	
+    	}else if(BackendAuth::getUser()->hasAccess('dojo.inventory.access_stocks_per_location')){
     		$fields->location->hidden = true;
     	}
     }

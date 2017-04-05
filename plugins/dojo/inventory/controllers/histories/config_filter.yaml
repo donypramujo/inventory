@@ -1,0 +1,31 @@
+scopes:
+    user: 
+        label: dojo.inventory::lang.model.created_by
+        modelClass: Dojo\Inventory\Models\User
+        conditions: user_id in (:filtered)
+        nameFrom: login
+    type:
+      label:  dojo.inventory::lang.history.type
+      type: group
+      conditions: type in (:filtered)
+      options:
+          create: create
+          update: update
+          delete: delete
+    new_status:
+      label:  dojo.inventory::lang.history.new_status
+      type: group
+      modelClass: Dojo\Inventory\Models\Stock
+      conditions: new_status in (:filtered)
+      options: getStatuses
+    old_status:
+      label:  dojo.inventory::lang.history.old_status
+      type: group
+      modelClass: Dojo\Inventory\Models\Stock
+      conditions: old_status in (:filtered)
+      options: getStatuses
+    created_at:
+        label: dojo.inventory::lang.model.created_at
+        type: daterange
+        conditions: created_at >= ':after' AND created_at <= ':before'
+

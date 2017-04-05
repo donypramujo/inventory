@@ -28,4 +28,11 @@ class History extends Model
     				'Backend\Models\User'
     		],
     ];
+    
+    public function getStatusOptions($value, $formData)
+    {
+    	return ['unused'=>trans ( 'dojo.inventory::lang.status.unused' ),
+    			'used' => trans ( 'dojo.inventory::lang.status.used' ),
+    			'broken'=>trans ( 'dojo.inventory::lang.status.broken' )];
+    }
 }

@@ -9,6 +9,7 @@
         'deleted_at' => 'Deleted At',
         'created_by' => 'Created By',
         'updated_by' => 'Updated By',
+        'export' => 'Export',
     ],
     'brand' => [
         'id' => 'ID',
@@ -21,6 +22,9 @@
         'master_data' => 'Master Data',
         'user' => 'User',
         'log' => 'Log',
+        'report' => 'Report',
+        'summary_of_stock' => 'Summary of Stock',
+        'history_of_stock' => 'History of Stock',
     ],
     'permission' => [
         'master_data' => 'Master Data',
@@ -32,8 +36,12 @@
         'manage_stocks' => 'Manage stocks',
         'manage_users' => 'Manage users',
         'manage_stocks_per_location' => 'Manage stocks per location',
-        'log' => 'Log',
-        'manage_stock_log' => 'Manage stock log',
+        'view_brands' => 'View brands',
+        'report' => 'Report',
+        'manage_summary_of_stocks' => 'Manage summary of stocks',
+        'manage_history_of_stocks' => 'Manage history of stocks',
+        'view_stocks' => 'View stocks',
+        'brand' => 'Inventory - Brand',
     ],
     'category' => [
         'id' => 'ID',
@@ -63,10 +71,19 @@
         'photo' => 'Photo',
         'status' => 'Status',
         'item_code' => 'Item Code',
+        'count' => 'Count',
+        'export' => 'Export',
+        'summary_of_stocks' => 'Summary of Stocks',
+        'export_summary_of_stocks' => 'Export Summary of Stocks',
     ],
-	'status' => [
-		'unused' =>'Unused',
-		'used' => 'Used',
-		'broken' => 'Broken'
-	],
+    'status' => [
+        'unused' => 'Unused',
+        'used' => 'Used',
+        'broken' => 'Broken',
+    ],
+    'history' => [
+        'new_status' => 'New Status',
+        'old_status' => 'Old Status',
+        'type' => 'Type',
+    ],
 ];

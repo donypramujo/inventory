@@ -9,3 +9,17 @@ scopes:
         modelClass: Dojo\Inventory\Models\Product
         conditions: product_id in (:filtered)
         nameFrom: name
+    status:
+      label:  dojo.inventory::lang.stock.status
+      type: group
+      modelClass: Dojo\Inventory\Models\Stock
+      conditions: status in (:filtered)
+      options: getStatuses
+    created_at:
+        label: dojo.inventory::lang.model.created_at
+        type: daterange
+        conditions: created_at >= ':after' AND created_at <= ':before'
+    updated_at: 
+        label: dojo.inventory::lang.model.updated_at
+        type: daterange
+        conditions: updated_at >= ':after' AND updated_at <= ':before'
