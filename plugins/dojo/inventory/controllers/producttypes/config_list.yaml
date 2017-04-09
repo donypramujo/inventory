@@ -1,6 +1,6 @@
-list: $/dojo/inventory/models/product/columns.yaml
-modelClass: Dojo\Inventory\Models\Product
-title: Products
+list: $/dojo/inventory/models/producttype/columns.yaml
+modelClass: Dojo\Inventory\Models\ProductType
+title: Product Types
 noRecordsMessage: 'backend::lang.list.no_records'
 recordsPerPage: 20
 showSetup: true
@@ -9,4 +9,4 @@ toolbar:
     buttons: list_toolbar
     search:
         prompt: 'backend::lang.list.search_prompt'
-recordUrl: 'dojo/inventory/products/update/:id'
+recordUrl: 'dojo/inventory/producttypes/update/:id'

@@ -14,8 +14,8 @@ class SummaryOfStock extends Model
     ];
     
     public $belongsTo = [
-    		'product' => [
-    				'Dojo\Inventory\Models\Product'
+    		'product_type' => [
+    				'Dojo\Inventory\Models\ProductType'
     		],
     		'location' => [
     				'Dojo\Inventory\Models\Location'

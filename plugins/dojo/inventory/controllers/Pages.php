@@ -33,10 +33,10 @@ class Pages extends Controller {
 		], false )) {
 			return redirect ( 'backend/dojo/inventory/categories' );
 		} else if ($this->user->hasAccess ( [ 
-				'dojo.inventory.access_products',
-				'dojo.inventory.access_view_products' 
+				'dojo.inventory.access_product_types',
+				'dojo.inventory.access_view_product_types' 
 		], false )) {
-			return redirect ( 'backend/dojo/inventory/products' );
+			return redirect ( 'backend/dojo/inventory/producttypes' );
 		}
 	}
 	public function report() {

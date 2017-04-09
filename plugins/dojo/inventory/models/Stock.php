@@ -23,8 +23,9 @@ class Stock extends Model
     		'item_code' => 'required|unique:dojo_inventory_stocks,item_code,NULL,id,deleted_at,NULL|max:50',
     		'serial_number' => 'required|max:100',
     		'status' => 'required',
-    		'product_id' => 'required',
+    		'product_type_id' => 'required',
     		'location_id' => 'required',
+    		'photo' => 'size:10'
     		
     ];
     public $attributeNames = [ ];
@@ -38,7 +39,7 @@ class Stock extends Model
     /**
      * @var array Monitor these attributes for changes.
      */
-    protected $revisionable = ['item_code','serial_number','description','status','product_id','location_id','deleted_at'];
+    protected $revisionable = ['item_code','serial_number','description','status','product_type_id','location_id','deleted_at'];
     
     public $revisionableLimit = 1000;
     /**
@@ -53,17 +54,17 @@ class Stock extends Model
     ];
     
     public $belongsTo = [
-    		'product' => [
-    				'Dojo\Inventory\Models\Product'
+    		'product_type' => [
+    				'Dojo\Inventory\Models\ProductType'
     		],
     		'location' => [
     				'Dojo\Inventory\Models\Location'
     		],
-    		'createdBy' => [
-    				'Backend\Models\User','key'=>'created_by'
+    		'created_by' => [
+    				'Backend\Models\User','key'=>'created_user_id'
     		],
-    		'updatedBy' => [
-    				'Backend\Models\User','key'=>'updated_by'
+    		'updated_by' => [
+    				'Backend\Models\User','key'=>'updated_user_id'
     		]
     ];
     
@@ -77,7 +78,7 @@ class Stock extends Model
     			'item_code' => trans ( 'dojo.inventory::lang.stock.item_code' ),
     			'serial_number' => trans ( 'dojo.inventory::lang.stock.serial_number' ),
     			'status' => trans ( 'dojo.inventory::lang.stock.status' ),
-    			'product_id' => trans ( 'dojo.inventory::lang.product.product' ),
+    			'product_type_id' => trans ( 'dojo.inventory::lang.product_type.product_type' ),
     			'location_id' => trans ( 'dojo.inventory::lang.location.location' ),
     	];
     	
@@ -105,13 +106,13 @@ class Stock extends Model
     }
     
     public function beforeCreate(){
-    	$this->createdBy()->associate(BackendAuth::getUser());
+    	$this->created_by()->associate(BackendAuth::getUser());
     
     }
     
     public function beforeUpdate(){
     	if($this->isDirty()){
-    		$this->updatedBy()->associate(BackendAuth::getUser());
+    		$this->updated_by()->associate(BackendAuth::getUser());
     	}
     }
     

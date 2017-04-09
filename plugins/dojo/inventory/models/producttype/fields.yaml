@@ -1,14 +1,14 @@
 fields:
     code:
-        label: 'dojo.inventory::lang.product.code'
+        label: 'dojo.inventory::lang.product_type.code'
         span: left
-        placeholder: 'dojo.inventory::lang.product.code'
+        placeholder: 'dojo.inventory::lang.product_type.code'
         required: 1
         type: text
     name:
-        label: 'dojo.inventory::lang.product.name'
+        label: 'dojo.inventory::lang.product_type.name'
         span: left
-        placeholder: 'dojo.inventory::lang.product.name'
+        placeholder: 'dojo.inventory::lang.product_type.name'
         required: 1
         type: text
     brand:

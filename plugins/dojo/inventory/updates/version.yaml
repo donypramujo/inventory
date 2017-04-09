@@ -3,7 +3,7 @@
     - builder_table_create_dojo_inventory_brands.php
     - builder_table_create_dojo_inventory_categories.php
     - builder_table_create_dojo_inventory_locations.php
-    - builder_table_create_dojo_inventory_products.php
+    - builder_table_create_dojo_inventory_product_types.php
     - builder_table_create_dojo_inventory_stocks.php
     - builder_table_create_dojo_inventory_histories.php
     - seed_all_tables.php

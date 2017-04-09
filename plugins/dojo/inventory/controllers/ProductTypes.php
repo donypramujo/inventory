@@ -3,7 +3,7 @@
 use Backend\Classes\Controller;
 use BackendMenu;
 
-class Products extends Controller
+class ProductTypes extends Controller
 {
     public $implement = ['Backend\Behaviors\ListController','Backend\Behaviors\FormController'];
     
@@ -11,14 +11,14 @@ class Products extends Controller
     public $formConfig = 'config_form.yaml';
 
     public $requiredPermissions = [
-        'dojo.inventory.access_products',
-    	'dojo.inventory.access_view_products'
+        'dojo.inventory.access_product_types',
+    	'dojo.inventory.access_view_product_types'
     ];
 
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Dojo.Inventory', 'master-data', 'product');
+        BackendMenu::setContext('Dojo.Inventory', 'master-data', 'product-type');
     }
     
     
@@ -32,23 +32,23 @@ class Products extends Controller
 //     }
 
     public function listExtendColumns($host) {
-    	if ($this->user->hasAccess ( 'dojo.inventory.access_products' )) {
-    	} else if ($this->user->hasAccess ( 'dojo.inventory.access_view_products' )) {
+    	if ($this->user->hasAccess ( 'dojo.inventory.access_product_types' )) {
+    	} else if ($this->user->hasAccess ( 'dojo.inventory.access_view_product_types' )) {
     		$host->showCheckboxes = false;
-    		$host->recordUrl = 'dojo/inventory/products/preview/:id';
+    		$host->recordUrl = 'dojo/inventory/producttypes/preview/:id';
     	}
     }
     public function update($recordId, $context = null) {
-    	if ($this->user->hasAccess ( 'dojo.inventory.access_products' )) {
+    	if ($this->user->hasAccess ( 'dojo.inventory.access_product_types' )) {
     		return $this->asExtension ( 'FormController' )->update ( $recordId, $context );
-    	} else if ($this->user->hasAccess ( 'dojo.inventory.access_view_products' )) {
+    	} else if ($this->user->hasAccess ( 'dojo.inventory.access_view_product_types' )) {
     		return response ( view ( 'cms::404' ), '404' );
     	}
     }
     public function create($context = null) {
-    	if ($this->user->hasAccess ( 'dojo.inventory.access_products' )) {
+    	if ($this->user->hasAccess ( 'dojo.inventory.access_product_types' )) {
     		return $this->asExtension ( 'FormController' )->create ( $context );
-    	} else if ($this->user->hasAccess ( 'dojo.inventory.access_view_products' )) {
+    	} else if ($this->user->hasAccess ( 'dojo.inventory.access_view_product_types' )) {
     		return response ( view ( 'cms::404' ), '404' );
     	}
     }

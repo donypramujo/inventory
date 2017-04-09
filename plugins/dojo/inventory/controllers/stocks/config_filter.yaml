@@ -5,9 +5,9 @@ scopes:
         conditions: location_id in (:filtered)
         nameFrom: name
     product:
-        label: dojo.inventory::lang.product.product
-        modelClass: Dojo\Inventory\Models\Product
-        conditions: product_id in (:filtered)
+        label: dojo.inventory::lang.product_type.product_type
+        modelClass: Dojo\Inventory\Models\ProductType
+        conditions: product_type_id in (:filtered)
         nameFrom: name
     status:
       label:  dojo.inventory::lang.stock.status

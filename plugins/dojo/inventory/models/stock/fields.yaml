@@ -11,12 +11,12 @@ fields:
         placeholder: 'dojo.inventory::lang.stock.serial_number'
         required: 1
         type: text
-    product:
-        label: 'dojo.inventory::lang.product.product'
+    product_type:
+        label: 'dojo.inventory::lang.product_type.product_type'
         nameFrom: code
         descriptionFrom: name
-        prompt: 'dojo.inventory::lang.product.find_product'
-        list: $/dojo/inventory/models/product/columns.yaml
+        prompt: 'dojo.inventory::lang.product_type.find_product_type'
+        list: $/dojo/inventory/models/producttype/columns.yaml
         span: left
         required: 1
         type: recordfinder

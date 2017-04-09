@@ -14,10 +14,10 @@ navigation:
             - dojo.inventory.access_locations
             - dojo.inventory.access_brands
             - dojo.inventory.access_categories
-            - dojo.inventory.access_products
+            - dojo.inventory.access_product_types
             - dojo.inventory.access_view_locations
             - dojo.inventory.access_view_users
-            - dojo.inventory.access_view_products
+            - dojo.inventory.access_view_product_types
             - dojo.inventory.access_view_categories
             - dojo.inventory.access_view_brands
         sideMenu:
@@ -49,13 +49,13 @@ navigation:
                 permissions:
                     - dojo.inventory.access_categories
                     - dojo.inventory.access_view_categories
-            product:
-                label: 'dojo.inventory::lang.product.product'
-                url: dojo/inventory/products
+            product-type:
+                label: 'dojo.inventory::lang.product_type.product_type'
+                url: dojo/inventory/producttypes
                 icon: icon-simplybuilt
                 permissions:
-                    - dojo.inventory.access_products
-                    - dojo.inventory.access_view_products
+                    - dojo.inventory.access_product_types
+                    - dojo.inventory.access_view_product_types
     stock:
         label: 'dojo.inventory::lang.stock.stock'
         url: dojo/inventory/stocks
@@ -97,12 +97,12 @@ permissions:
     dojo.inventory.access_view_categories:
         tab: 'dojo.inventory::lang.permission.category'
         label: 'dojo.inventory::lang.permission.view_categories'
-    dojo.inventory.access_products:
-        tab: 'dojo.inventory::lang.permission.product'
-        label: 'dojo.inventory::lang.permission.manage_products'
-    dojo.inventory.access_view_products:
-        tab: 'dojo.inventory::lang.permission.product'
-        label: 'dojo.inventory::lang.permission.view_products'
+    dojo.inventory.access_product_types:
+        tab: 'dojo.inventory::lang.permission.product_type'
+        label: 'dojo.inventory::lang.permission.manage_product_types'
+    dojo.inventory.access_view_product_types:
+        tab: 'dojo.inventory::lang.permission.product_type'
+        label: 'dojo.inventory::lang.permission.view_product_types'
     dojo.inventory.access_locations:
         tab: 'dojo.inventory::lang.permission.location'
         label: 'dojo.inventory::lang.permission.manage_locations'

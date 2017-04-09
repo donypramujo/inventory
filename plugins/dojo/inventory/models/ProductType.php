@@ -6,7 +6,7 @@ use Backend\Facades\BackendAuth;
 /**
  * Model
  */
-class Product extends Model
+class ProductType extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     
@@ -20,8 +20,8 @@ class Product extends Model
      * Validation
      */
     public $rules = [
-    		'code' => 'required|unique:dojo_inventory_products,code,NULL,id,deleted_at,NULL|max:10',
-    		'name' => 'required|unique:dojo_inventory_products,name,NULL,id,deleted_at,NULL|max:50',
+    		'code' => 'required|unique:dojo_inventory_product_types,code,NULL,id,deleted_at,NULL|max:10',
+    		'name' => 'required|unique:dojo_inventory_product_types,name,NULL,id,deleted_at,NULL|max:50',
     		'brand_id' => 'required',
     		'category_id' => 'required',
     ];
@@ -44,7 +44,7 @@ class Product extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'dojo_inventory_products';
+    public $table = 'dojo_inventory_product_types';
     
     public $belongsTo = [
     		'brand' => [
@@ -62,8 +62,8 @@ class Product extends Model
     
     public function beforeValidate() {
     	$this->attributeNames = [
-    			'code' => trans ( 'dojo.inventory::lang.product.code' ),
-    			'name' => trans ( 'dojo.inventory::lang.product.name' ),
+    			'code' => trans ( 'dojo.inventory::lang.product_type.code' ),
+    			'name' => trans ( 'dojo.inventory::lang.product_type.name' ),
     			'brand_id' => trans ( 'dojo.inventory::lang.brand.brand' ),
     			'category_id' => trans ( 'dojo.inventory::lang.category.category' ),
     	];

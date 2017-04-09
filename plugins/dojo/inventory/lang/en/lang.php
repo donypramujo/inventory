@@ -31,7 +31,7 @@ return [
 				'master_data' => 'Master Data',
 				'manage_brands' => 'Manage brands',
 				'manage_categories' => 'Manage categories',
-				'manage_products' => 'Manage products',
+				'manage_product_types' => 'Manage product types',
 				'manage_locations' => 'Manage locations',
 				'stock' => 'Inventory - Stock',
 				'manage_stocks' => 'Manage stocks',
@@ -43,12 +43,12 @@ return [
 				'view_stocks' => 'View stocks',
 				'brand' => 'Inventory - Brand',
 				'category' => 'Inventory - Category',
-				'product' => 'Inventory - Product',
+				'product_type' => 'Inventory - Product Type',
 				'location' => 'Inventory - Location',
 				'user' => 'Inventory - User',
 				'view_brands' => 'View brands',
 				'view_categories' => 'View categories',
-				'view_products' => 'View products',
+				'view_product_types' => 'View product types',
 				'view_locations' => 'View locations',
 				'view_users' => 'View users' 
 		],
@@ -59,12 +59,12 @@ return [
 				'code' => 'Category Code',
 				'find_category' => 'Click the %s button to find a category' 
 		],
-		'product' => [ 
-				'product' => 'Product',
+		'product_type' => [ 
+				'product_type' => 'Product Type',
 				'id' => 'ID',
-				'code' => 'Product Code',
-				'name' => 'Product Name',
-				'find_product' => 'Click the %s button to find a product' 
+				'code' => 'Product Type Code',
+				'name' => 'Product Type Name',
+				'find_product_type' => 'Click the %s button to find a product type' 
 		],
 		'location' => [ 
 				'location' => 'Location',

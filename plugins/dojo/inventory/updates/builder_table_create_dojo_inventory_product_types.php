@@ -3,11 +3,11 @@
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class BuilderTableCreateDojoInventoryProducts extends Migration
+class BuilderTableCreateDojoInventoryProductTypes extends Migration
 {
     public function up()
     {
-        Schema::create('dojo_inventory_products', function($table)
+        Schema::create('dojo_inventory_product_types', function($table)
         {
         	$table->engine = 'InnoDB';
         	$table->increments('id')->unsigned();
@@ -30,6 +30,6 @@ class BuilderTableCreateDojoInventoryProducts extends Migration
     
     public function down()
     {
-        Schema::dropIfExists('dojo_inventory_products');
+        Schema::dropIfExists('dojo_inventory_product_types');
     }
 }

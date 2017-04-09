@@ -1,17 +1,17 @@
 columns:
     id:
-        label: 'dojo.inventory::lang.product.id'
+        label: 'dojo.inventory::lang.product_type.id'
         type: number
         invisible: true
         searchable: true
         sortable: true
     code: 
-        label: 'dojo.inventory::lang.product.code'
+        label: 'dojo.inventory::lang.product_type.code'
         type: text
         searchable: true
         sortable: true
     name: 
-        label: 'dojo.inventory::lang.product.name'
+        label: 'dojo.inventory::lang.product_type.name'
         type: text
         searchable: true
         sortable: true

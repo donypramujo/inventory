@@ -6,17 +6,17 @@ columns:
         select: name
         searchable: true
         sortable: true
-    _product_name:
-        label: 'dojo.inventory::lang.product.product'
+    _product_type:
+        label: 'dojo.inventory::lang.product_type.product_type'
         type: text
-        relation: product
+        relation: product_type
         select: name
         searchable: true
         sortable: true
-    product[brand][name]: 
+    product_type[brand][name]: 
         label: 'dojo.inventory::lang.brand.brand'
         type: text
-    product[category][name]: 
+    product_type[category][name]: 
         label: 'dojo.inventory::lang.category.category'
         type: text
     status:

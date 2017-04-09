@@ -1,0 +1,10 @@
+name: Product Types
+form: $/dojo/inventory/models/producttype/fields.yaml
+modelClass: Dojo\Inventory\Models\ProductType
+defaultRedirect: dojo/inventory/producttypes
+create:
+    redirect: 'dojo/inventory/producttypes/update/:id'
+    redirectClose: dojo/inventory/producttypes
+update:
+    redirect: dojo/inventory/producttypes
+    redirectClose: dojo/inventory/producttypes
