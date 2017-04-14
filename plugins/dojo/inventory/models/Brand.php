@@ -10,7 +10,7 @@ class Brand extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     
-//     use \October\Rain\Database\Traits\SoftDelete;
+    use \October\Rain\Database\Traits\SoftDelete;
     
     use \October\Rain\Database\Traits\Revisionable;
 
